@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animation!</title>
+<style type="text/css">
+body{
+	background-image: url('balloons.gif');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	position: relative;
+	/*height: 200px;*/
+	}
+.space {
+	width: 1200px;
+	height: 600px;
+}
+#mouse {
+	display: inline-block;
+	margin-top: 450px;
+	margin-left: 850px;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
+#alien{
+	margin-top: 330px;
+	margin-left: 1050px;
+	/*display: inline-block;*/
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	}
+</style>
+</head>
+<body> 
+<div class="space">
+	<div id="mouse"></div>
+	<div id="alien"></div> 
+	<img id= "mouse" src="mousey.gif"> 
+	<img id= "alien" src="alien.gif">
+
+<button id= onclick="run()">Click</button>
+
+<script type="text/javascript">
+function move() {
+	var elem = document.getElementById("alien");
+	var elem2 = document.getElementById("mouse");
+	var pos = 0;
+	var pos2 = 0;
+	var time = setInterval(frame, 10);
+	function frame() {
+		if (pos == 1200) {
+			clearInterval(time);
+		} else {
+			pos++;
+			elem.style.right = movepos + 'px';
+
+			pos2++;
+			elem2.style.left = pos +  'px';
+		}
+	}
+}	
+function control() {
+	var element = document.getElementById("alien");
+	var A = 0;
+	var B = 0;
+	var move2 = setInterval(frame, 5);
+		function fame() {
+			if (A == 0) {
+				moveA ++ ;
+				elem.style.right = moveA + 'px';
+
+			}
+		}
+}
+</script>
+</html>
